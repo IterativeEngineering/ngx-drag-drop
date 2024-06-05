@@ -54,6 +54,9 @@ export class DndDraggableDirective implements AfterViewInit, OnDestroy {
   @Input()
   dndDragImageOffsetFunction:DndDragImageOffsetFunction = calculateDragImageOffset;
 
+  @Input()
+  customDragImageRef?: ElementRef;
+
   @Output()
   readonly dndStart:EventEmitter<DragEvent> = new EventEmitter<DragEvent>();
 
@@ -116,6 +119,9 @@ export class DndDraggableDirective implements AfterViewInit, OnDestroy {
   ngAfterViewInit():void {
     this.ngZone.runOutsideAngular( () => {
       this.elementRef.nativeElement.addEventListener( "drag", this.dragEventHandler );
+      if (this.customDragImageRef) {
+        this.registerDragImage(this.customDragImageRef);
+      }
     } );
   }
 
