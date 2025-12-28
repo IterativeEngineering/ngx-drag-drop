@@ -22,22 +22,21 @@ interface NestableListItem {
 }
 
 @Component({
-  selector: 'dnd-nested',
-  templateUrl: './nested.component.html',
-  styleUrls: ['./nested.component.scss'],
-  standalone: true,
-  imports: [
-    MatCardModule,
-    DndPlaceholderRefDirective,
-    NgForOf,
-    DndDraggableDirective,
-    NgIf,
-    MatIconModule,
-    DndHandleDirective,
-    DndDragImageRefDirective,
-    DndDropzoneDirective,
-    NgTemplateOutlet,
-  ],
+    selector: 'dnd-nested',
+    templateUrl: './nested.component.html',
+    styleUrls: ['./nested.component.scss'],
+    imports: [
+        MatCardModule,
+        DndPlaceholderRefDirective,
+        NgForOf,
+        DndDraggableDirective,
+        NgIf,
+        MatIconModule,
+        DndHandleDirective,
+        DndDragImageRefDirective,
+        DndDropzoneDirective,
+        NgTemplateOutlet,
+    ]
 })
 export default class NestedComponent {
   nestableList: NestableListItem[] = [

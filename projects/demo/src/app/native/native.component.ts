@@ -5,11 +5,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DndDropEvent, DndDropzoneDirective } from 'ngx-drag-drop';
 
 @Component({
-  selector: 'dnd-native',
-  templateUrl: './native.component.html',
-  styleUrls: ['./native.component.scss'],
-  standalone: true,
-  imports: [MatCardModule, DndDropzoneDirective, NgIf, JsonPipe],
+    selector: 'dnd-native',
+    templateUrl: './native.component.html',
+    styleUrls: ['./native.component.scss'],
+    imports: [MatCardModule, DndDropzoneDirective, NgIf, JsonPipe]
 })
 export default class NativeComponent {
   public lastDropEvent: DndDropEvent | null = null;

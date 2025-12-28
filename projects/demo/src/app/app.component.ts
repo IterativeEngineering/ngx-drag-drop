@@ -9,9 +9,10 @@ const TABS: string[] = ['simple', 'list', 'nested', 'tree', 'native', 'typed'];
 const DEFAULT_TAB = TABS[0];
 
 @Component({
-  selector: 'dnd-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'dnd-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   readonly title = 'NgxDragDrop Demo';

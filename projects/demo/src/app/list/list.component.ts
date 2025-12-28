@@ -27,20 +27,19 @@ interface DropzoneLayout {
 }
 
 @Component({
-  selector: 'dnd-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
-  standalone: true,
-  imports: [
-    MatListModule,
-    DndDropzoneDirective,
-    DndPlaceholderRefDirective,
-    NgForOf,
-    DndDraggableDirective,
-    NgIf,
-    DndHandleDirective,
-    MatIconModule,
-  ],
+    selector: 'dnd-list',
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.scss'],
+    imports: [
+        MatListModule,
+        DndDropzoneDirective,
+        DndPlaceholderRefDirective,
+        NgForOf,
+        DndDraggableDirective,
+        NgIf,
+        DndHandleDirective,
+        MatIconModule,
+    ]
 })
 export default class ListComponent {
   draggableListLeft: DraggableItem[] = [

@@ -31,17 +31,16 @@ function range(start: number, end: number) {
 }
 
 @Component({
-  selector: 'dnd-typed',
-  templateUrl: './typed.component.html',
-  styleUrls: ['./typed.component.scss'],
-  standalone: true,
-  imports: [
-    MatListModule,
-    DndDropzoneDirective,
-    DndPlaceholderRefDirective,
-    NgForOf,
-    DndDraggableDirective,
-  ],
+    selector: 'dnd-typed',
+    templateUrl: './typed.component.html',
+    styleUrls: ['./typed.component.scss'],
+    imports: [
+        MatListModule,
+        DndDropzoneDirective,
+        DndPlaceholderRefDirective,
+        NgForOf,
+        DndDraggableDirective,
+    ]
 })
 export default class TypedComponent {
   public fruits: Fruit[] = range(0, 100).map(_ => {
