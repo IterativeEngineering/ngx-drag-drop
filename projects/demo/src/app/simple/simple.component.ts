@@ -24,24 +24,23 @@ interface DraggableItem {
 }
 
 @Component({
-  selector: 'dnd-simple',
-  templateUrl: './simple.component.html',
-  styleUrls: ['./simple.component.scss'],
-  standalone: true,
-  imports: [
-    MatCardModule,
-    NgForOf,
-    DndDraggableDirective,
-    NgIf,
-    DndHandleDirective,
-    MatIconModule,
-    DndDragImageRefDirective,
-    IndirectDndHandleComponent,
-    IndirectDragImageComponent,
-    MatSlideToggleModule,
-    DndDropzoneDirective,
-    JsonPipe,
-  ],
+    selector: 'dnd-simple',
+    templateUrl: './simple.component.html',
+    styleUrls: ['./simple.component.scss'],
+    imports: [
+        MatCardModule,
+        NgForOf,
+        DndDraggableDirective,
+        NgIf,
+        DndHandleDirective,
+        MatIconModule,
+        DndDragImageRefDirective,
+        IndirectDndHandleComponent,
+        IndirectDragImageComponent,
+        MatSlideToggleModule,
+        DndDropzoneDirective,
+        JsonPipe,
+    ]
 })
 export default class SimpleComponent {
   draggables: DraggableItem[] = [
