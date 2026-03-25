@@ -22,7 +22,7 @@ export const JSON_MIME_TYPE = 'application/json';
 export const MSIE_MIME_TYPE = 'Text';
 
 function mimeTypeIsCustom(mimeType: string) {
-  return mimeType.substr(0, CUSTOM_MIME_TYPE.length) === CUSTOM_MIME_TYPE;
+  return mimeType.substring(0, CUSTOM_MIME_TYPE.length) === CUSTOM_MIME_TYPE;
 }
 
 export function getWellKnownMimeType(event: DragEvent): string | null {

@@ -104,7 +104,7 @@ export function getDndType(event: DragEvent): string | undefined {
     return undefined;
   }
 
-  return mimeType.substr(CUSTOM_MIME_TYPE.length + 1) || undefined;
+  return mimeType.substring(CUSTOM_MIME_TYPE.length + 1) || undefined;
 }
 
 export function isExternalDrag(): boolean {
