@@ -28,6 +28,24 @@ Port of [angular-drag-drop-lists](https://github.com/marceljuenemann/angular-dra
 This has `dropzones` though :+1:
 The idea is that the directive does not handle lists internally so the `dndDropzone` can be general purpose.
 
+## Angular Version Compatibility
+
+Starting with v13, the library major version matches the Angular major version.
+
+| Angular | ngx-drag-drop |
+|---------|---------------|
+| 21.x    | 21.x          |
+| 20.x    | 20.x          |
+| 19.x    | 19.x          |
+| 18.x    | 18.x          |
+| 17.x    | 17.x          |
+| 16.x    | 16.x          |
+| 15.x    | 15.x          |
+| 14.x    | 14.x          |
+| 13.x    | 13.x          |
+
+For older Angular versions (v4–v12), use ngx-drag-drop v2.x.
+
 ## Usage
 
 `app.component.html`
