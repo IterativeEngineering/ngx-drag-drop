@@ -18,4 +18,5 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build:lib
+      - run: npm test
       - run: npm publish ./dist/ngx-drag-drop --provenance --access public

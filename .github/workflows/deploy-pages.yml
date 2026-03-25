@@ -29,6 +29,8 @@ jobs:
 
       - run: npm run build:lib
 
+      - run: npm test
+
       - run: npm run build:docs
 
       - uses: actions/upload-pages-artifact@v3
