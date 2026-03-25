@@ -46,6 +46,10 @@ const routes: Routes = [
     loadComponent: () => import('./typed/typed.component'),
   },
   {
+    path: 'shadow-dom',
+    loadComponent: () => import('./shadow-dom/shadow-dom.component'),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'simple',
