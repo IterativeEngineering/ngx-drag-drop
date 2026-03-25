@@ -8,7 +8,7 @@ import {
   isExternalDrag,
   dndState,
 } from './dnd-state';
-import { CUSTOM_MIME_TYPE, JSON_MIME_TYPE, MSIE_MIME_TYPE } from './dnd-utils';
+import { CUSTOM_MIME_TYPE } from './dnd-utils';
 
 function createMockDragEvent(
   overrides: Partial<DragEvent> = {}
@@ -152,24 +152,6 @@ describe('dnd-state', () => {
         },
       } as unknown as DragEvent;
       expect(getDndType(event)).toBe('myType');
-    });
-
-    it('should return undefined for JSON MIME type on external drag', () => {
-      const event = {
-        dataTransfer: {
-          types: [JSON_MIME_TYPE],
-        },
-      } as unknown as DragEvent;
-      expect(getDndType(event)).toBeUndefined();
-    });
-
-    it('should return undefined for MSIE MIME type on external drag', () => {
-      const event = {
-        dataTransfer: {
-          types: [MSIE_MIME_TYPE],
-        },
-      } as unknown as DragEvent;
-      expect(getDndType(event)).toBeUndefined();
     });
 
     it('should return undefined when no known MIME type on external drag', () => {

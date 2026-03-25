@@ -4,8 +4,6 @@ import {
   DROP_EFFECTS,
   filterEffects,
   getWellKnownMimeType,
-  JSON_MIME_TYPE,
-  MSIE_MIME_TYPE,
 } from './dnd-utils';
 
 export interface DndState {
@@ -97,10 +95,6 @@ export function getDndType(event: DragEvent): string | undefined {
   const mimeType = getWellKnownMimeType(event);
 
   if (mimeType === null) {
-    return undefined;
-  }
-
-  if (mimeType === MSIE_MIME_TYPE || mimeType === JSON_MIME_TYPE) {
     return undefined;
   }
 
