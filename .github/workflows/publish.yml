@@ -19,9 +19,8 @@ jobs:
         run: |
           echo '## Test Coverage' >> $GITHUB_STEP_SUMMARY
           echo '' >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
           npm run test:coverage 2>&1 | tee /dev/stderr | sed -n '/^-.*|/,/^-.*|$/p' >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
 
   publish:
     needs: test
