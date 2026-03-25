@@ -9,8 +9,6 @@ import {
   calculateDragImageOffset,
   setDragImage,
   CUSTOM_MIME_TYPE,
-  JSON_MIME_TYPE,
-  MSIE_MIME_TYPE,
 } from './dnd-utils';
 
 function createMockDragEvent(
@@ -74,20 +72,6 @@ describe('getWellKnownMimeType', () => {
     expect(getWellKnownMimeType(event)).toBeNull();
   });
 
-  it('should return MSIE_MIME_TYPE when types is falsy', () => {
-    const event = {
-      dataTransfer: { types: null },
-    } as unknown as DragEvent;
-    expect(getWellKnownMimeType(event)).toBe(MSIE_MIME_TYPE);
-  });
-
-  it('should return JSON_MIME_TYPE when present', () => {
-    const event = {
-      dataTransfer: { types: [JSON_MIME_TYPE] },
-    } as unknown as DragEvent;
-    expect(getWellKnownMimeType(event)).toBe(JSON_MIME_TYPE);
-  });
-
   it('should return custom MIME type when present', () => {
     const customType = CUSTOM_MIME_TYPE + '-mytype';
     const event = {
@@ -103,11 +87,11 @@ describe('getWellKnownMimeType', () => {
     expect(getWellKnownMimeType(event)).toBeNull();
   });
 
-  it('should return MSIE_MIME_TYPE ("Text") when present', () => {
+  it('should return null for non-custom known MIME types', () => {
     const event = {
-      dataTransfer: { types: [MSIE_MIME_TYPE] },
+      dataTransfer: { types: ['application/json'] },
     } as unknown as DragEvent;
-    expect(getWellKnownMimeType(event)).toBe(MSIE_MIME_TYPE);
+    expect(getWellKnownMimeType(event)).toBeNull();
   });
 });
 
