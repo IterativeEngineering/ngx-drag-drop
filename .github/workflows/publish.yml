@@ -5,7 +5,26 @@ on:
     types: [created]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build:lib
+      - name: Run tests with coverage
+        run: |
+          echo '## Test Coverage' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          npm run test:coverage 2>&1 | tee /dev/stderr | sed -n '/^-.*|/,/^-.*|$/p' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
   publish:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,5 +37,4 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build:lib
-      - run: npm run test:coverage
       - run: npm publish ./dist/ngx-drag-drop --provenance --access public
