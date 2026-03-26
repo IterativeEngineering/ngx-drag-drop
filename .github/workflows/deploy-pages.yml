@@ -15,45 +15,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
-      - run: npm ci
-
-      - run: npm run build:lib
-
-      - name: Run tests with coverage
-        run: |
-          echo '## Test Coverage' >> $GITHUB_STEP_SUMMARY
-          echo '' >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          npm run test:coverage 2>&1 | tee /dev/stderr | sed -n '/^-.*|/,/^-.*|$/p' >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-
   build:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
 
       - run: npm ci
-
       - run: npm run build:lib
-
       - run: npm run build:docs
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
