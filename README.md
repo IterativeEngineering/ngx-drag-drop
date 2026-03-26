@@ -34,7 +34,7 @@ The idea is that the directive does not handle lists internally so the `dndDropz
 Starting with v13, the library major version matches the Angular major version.
 
 | Angular | ngx-drag-drop |
-|---------|---------------|
+| ------- | ------------- |
 | 21.x    | 21.x          |
 | 20.x    | 20.x          |
 | 19.x    | 19.x          |

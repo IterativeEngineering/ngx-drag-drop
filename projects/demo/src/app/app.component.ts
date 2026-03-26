@@ -4,7 +4,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { filter, map, Observable, shareReplay, startWith } from 'rxjs';
 
-const TABS: string[] = ['simple', 'list', 'nested', 'tree', 'native', 'typed', 'shadow-dom'];
+const TABS: string[] = [
+  'simple',
+  'list',
+  'nested',
+  'tree',
+  'native',
+  'typed',
+  'shadow-dom',
+];
 
 const ISSUE_DEMOS: { issue: number; label: string }[] = [
   { issue: 195, label: '#195 — dropEffect ignores dropzone effectAllowed' },

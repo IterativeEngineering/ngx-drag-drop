@@ -53,9 +53,7 @@ describe('DndDropzoneDirective', () => {
 
     fixture = TestBed.createComponent(BasicDropzoneHost);
     fixture.detectChanges();
-    dropzoneEl = fixture.debugElement.query(
-      By.directive(DndDropzoneDirective)
-    );
+    dropzoneEl = fixture.debugElement.query(By.directive(DndDropzoneDirective));
   });
 
   it('should have the directive instance', () => {
@@ -87,9 +85,7 @@ describe('DndDropzoneDirective - disabled', () => {
 
     fixture = TestBed.createComponent(DisabledDropzoneHost);
     fixture.detectChanges();
-    dropzoneEl = fixture.debugElement.query(
-      By.directive(DndDropzoneDirective)
-    );
+    dropzoneEl = fixture.debugElement.query(By.directive(DndDropzoneDirective));
     directive = dropzoneEl.injector.get(DndDropzoneDirective);
   });
 
@@ -124,9 +120,7 @@ describe('DndDropzoneDirective - placeholder', () => {
 
     fixture = TestBed.createComponent(PlaceholderDropzoneHost);
     fixture.detectChanges();
-    dropzoneEl = fixture.debugElement.query(
-      By.directive(DndDropzoneDirective)
-    );
+    dropzoneEl = fixture.debugElement.query(By.directive(DndDropzoneDirective));
   });
 
   it('should remove placeholder from DOM on init', () => {
@@ -149,9 +143,7 @@ describe('DndDropzoneDirective - typed', () => {
 
     fixture = TestBed.createComponent(TypedDropzoneHost);
     fixture.detectChanges();
-    dropzoneEl = fixture.debugElement.query(
-      By.directive(DndDropzoneDirective)
-    );
+    dropzoneEl = fixture.debugElement.query(By.directive(DndDropzoneDirective));
   });
 
   it('should accept typed dropzone input', () => {

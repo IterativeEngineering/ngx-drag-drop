@@ -24,10 +24,7 @@
   }
 </ng-template>
 
-<div
-  (dndDrop)="onDrop($event, nestableList)"
-  class="root-dropzone"
-  dndDropzone>
+<div (dndDrop)="onDrop($event, nestableList)" class="root-dropzone" dndDropzone>
   <ng-container
     *ngTemplateOutlet="
       recursiveList;
