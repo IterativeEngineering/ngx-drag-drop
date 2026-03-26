@@ -1,16 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices",
-    "schedule:biweekly"
-  ],
-  "labels": ["dependencies"],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "rangeStrategy": "pin",
-  "vulnerabilityAlerts": {
-    "labels": ["security"],
-    "assignees": ["ChristofFritz"]
-  }
+    "config:best-practices"
+  ]
 }
