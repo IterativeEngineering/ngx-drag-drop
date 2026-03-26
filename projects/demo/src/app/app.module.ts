@@ -9,6 +9,7 @@ import { MatLineModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -50,6 +51,10 @@ const routes: Routes = [
     loadComponent: () => import('./shadow-dom/shadow-dom.component'),
   },
   {
+    path: 'issue/195',
+    loadComponent: () => import('./issue-195/issue-195.component'),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'simple',
@@ -76,6 +81,7 @@ export class AppRoutingModule {}
     MatSnackBarModule,
     MatSlideToggleModule,
     MatIconModule,
+    MatMenuModule,
     MatTabsModule,
     AppRoutingModule,
     MatLineModule,
