@@ -11,9 +11,7 @@ import {
   CUSTOM_MIME_TYPE,
 } from './dnd-utils';
 
-function createMockDragEvent(
-  overrides: Partial<DragEvent> = {}
-): DragEvent {
+function createMockDragEvent(overrides: Partial<DragEvent> = {}): DragEvent {
   const dataStore = new Map<string, string>();
   return {
     dataTransfer: {

@@ -12,7 +12,9 @@ import { endDrag, dndState } from './dnd-state';
 @Component({
   standalone: true,
   imports: [DndDraggableDirective],
-  template: `<div [dndDraggable]="'testData'" [dndEffectAllowed]="'copyMove'">drag me</div>`,
+  template: `<div [dndDraggable]="'testData'" [dndEffectAllowed]="'copyMove'">
+    drag me
+  </div>`,
 })
 class BasicDraggableHost {}
 

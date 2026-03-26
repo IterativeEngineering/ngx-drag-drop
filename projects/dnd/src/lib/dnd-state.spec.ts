@@ -10,9 +10,7 @@ import {
 } from './dnd-state';
 import { CUSTOM_MIME_TYPE } from './dnd-utils';
 
-function createMockDragEvent(
-  overrides: Partial<DragEvent> = {}
-): DragEvent {
+function createMockDragEvent(overrides: Partial<DragEvent> = {}): DragEvent {
   return {
     dataTransfer: {
       effectAllowed: 'all',
@@ -127,7 +125,11 @@ describe('dnd-state', () => {
     });
 
     it('should handle missing dataTransfer', () => {
-      const event = { dataTransfer: null, ctrlKey: false, altKey: false } as unknown as DragEvent;
+      const event = {
+        dataTransfer: null,
+        ctrlKey: false,
+        altKey: false,
+      } as unknown as DragEvent;
       expect(getDropEffect(event)).toBe('move');
     });
   });

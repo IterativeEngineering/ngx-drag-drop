@@ -1,8 +1,9 @@
 <h3>Issue #195: dropEffect ignores dropzone's dndEffectAllowed</h3>
 <p>
-  Draggable has <code>dndEffectAllowed="all"</code>.
-  Dropzone has <code>dndEffectAllowed="link"</code>.
-  On drop, the <code>dropEffect</code> should be <code>"link"</code>, not <code>"move"</code>.
+  Draggable has <code>dndEffectAllowed="all"</code>. Dropzone has
+  <code>dndEffectAllowed="link"</code>. On drop, the
+  <code>dropEffect</code> should be <code>"link"</code>, not
+  <code>"move"</code>.
 </p>
 
 <div class="demo">
@@ -30,16 +31,22 @@
 @if (lastDropEvent) {
 <div class="result">
   <div>
-    <strong>Dropzone received dropEffect: {{ lastDropEvent.dropEffect }}</strong>
-    <span [class.pass]="lastDropEvent.dropEffect === 'link'"
-          [class.fail]="lastDropEvent.dropEffect !== 'link'">
-      {{ lastDropEvent.dropEffect === 'link' ? 'PASS' : 'FAIL — expected "link"' }}
+    <strong
+      >Dropzone received dropEffect: {{ lastDropEvent.dropEffect }}</strong
+    >
+    <span
+      [class.pass]="lastDropEvent.dropEffect === 'link'"
+      [class.fail]="lastDropEvent.dropEffect !== 'link'">
+      {{
+        lastDropEvent.dropEffect === 'link' ? 'PASS' : 'FAIL — expected "link"'
+      }}
     </span>
   </div>
   <div>
     <strong>Draggable fired effect: {{ dragEffect }}</strong>
-    <span [class.pass]="dragEffect === 'link'"
-          [class.fail]="dragEffect !== 'link'">
+    <span
+      [class.pass]="dragEffect === 'link'"
+      [class.fail]="dragEffect !== 'link'">
       {{ dragEffect === 'link' ? 'PASS' : 'FAIL — expected "link"' }}
     </span>
   </div>

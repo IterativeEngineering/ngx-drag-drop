@@ -52,7 +52,11 @@ export default class ShadowDomComponent {
     },
   ];
 
-  onDragged(item: NestableListItem, list: NestableListItem[], effect: DropEffect) {
+  onDragged(
+    item: NestableListItem,
+    list: NestableListItem[],
+    effect: DropEffect
+  ) {
     if (effect === 'move') {
       const index = list.indexOf(item);
       list.splice(index, 1);
