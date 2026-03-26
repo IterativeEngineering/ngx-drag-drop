@@ -6,6 +6,10 @@ import { filter, map, Observable, shareReplay, startWith } from 'rxjs';
 
 const TABS: string[] = ['simple', 'list', 'nested', 'tree', 'native', 'typed', 'shadow-dom'];
 
+const ISSUE_DEMOS: { issue: number; label: string }[] = [
+  { issue: 195, label: '#195 — dropEffect ignores dropzone effectAllowed' },
+];
+
 const DEFAULT_TAB = TABS[0];
 
 @Component({
@@ -18,6 +22,7 @@ export class AppComponent {
   readonly title = 'NgxDragDrop Demo';
 
   readonly tabs: string[] = TABS;
+  readonly issueDemos = ISSUE_DEMOS;
   readonly activeTab$: Observable<string>;
 
   constructor(
@@ -47,5 +52,9 @@ export class AppComponent {
 
   onTabLinkClick(tab: string) {
     this.router.navigate([tab]);
+  }
+
+  onIssueDemoClick(issue: number) {
+    this.router.navigate(['issue', issue]);
   }
 }
