@@ -3,20 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build:lib && npm run start:docs",
+    "start": "pnpm run build:lib && pnpm run start:docs",
     "start:docs": "ng serve demo",
     "build:lib": "ng build dnd",
     "watch:lib": "ng build dnd --watch --configuration development",
     "build:docs": "ng build demo --configuration production --base-href /ngx-drag-drop/ && cp docs/index.html docs/404.html",
     "watch:docs": "ng build demo --watch --configuration development",
-    "publish:stable": "npm publish ./dist/ngx-drag-drop",
-    "publish:next": "npm publish ./dist/ngx-drag-drop --tag next",
+    "publish:stable": "pnpm publish ./dist/ngx-drag-drop",
+    "publish:next": "pnpm publish ./dist/ngx-drag-drop --tag next",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prettier": "npx prettier --write ."
+    "prettier": "pnpm exec prettier --write ."
   },
   "private": true,
+  "packageManager": "pnpm@10.32.1",
   "dependencies": {
     "@angular/animations": "^21.2.6",
     "@angular/cdk": "^21.2.4",
