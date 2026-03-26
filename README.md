@@ -9,7 +9,9 @@
 [_Demo_](https://christoffritz.github.io/ngx-drag-drop/) / [_StackBlitz Issue Template_](https://stackblitz.com/edit/ngx-drag-drop-issue-template)
 
 ```sh
-npm install ngx-drag-drop --save
+npm install ngx-drag-drop
+# or
+pnpm add ngx-drag-drop
 ```
 
 **Angular directives for declarative drag and drop using the HTML5 Drag-And-Drop API**
@@ -359,18 +361,18 @@ See https://angular.io/guide/creating-libraries
 
 #### Edit Library
 
-- run `npm run watch:lib` for hacking on library
+- run `pnpm run watch:lib` for hacking on library
 
 #### Release Library
 
 - assure correct version is set in `projects/dnd/package.json`
-- build library with `npm run build:lib`
-- publish library with `npm run publish:stable` (use `npm run publish:next` for pre-releases)
+- build library with `pnpm run build:lib`
+- publish library with `pnpm run publish:stable` (use `pnpm run publish:next` for pre-releases)
 
 #### Edit Docs
 
-- initially and on lib changes run `npm run build:lib` to current version of lib available to the demo
-- run `npm run start:docs`
+- initially and on lib changes run `pnpm run build:lib` to current version of lib available to the demo
+- run `pnpm run start:docs`
 
 #### Release Docs
 

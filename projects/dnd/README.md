@@ -9,7 +9,11 @@
 [_Demo_](https://christoffritz.github.io/ngx-drag-drop/) / [_StackBlitz Issue
 Template_](https://stackblitz.com/edit/ngx-drag-drop-issue-template)
 
-`npm install ngx-drag-drop --save`
+```sh
+npm install ngx-drag-drop
+# or
+pnpm add ngx-drag-drop
+```
 
 **Angular directives for declarative drag and drop using the HTML5 Drag-And-Drop API**
 
