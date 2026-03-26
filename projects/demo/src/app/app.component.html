@@ -1,6 +1,20 @@
 <mat-toolbar class="mat-elevation-z4 flex-shrink-0" color="primary">
   <span>{{ title }}</span>
 
+  <span class="flex-grow-1"></span>
+
+  <button [matMenuTriggerFor]="issueMenu" mat-button>
+    <mat-icon fontIcon="bug_report"></mat-icon>
+    Issue Demos
+  </button>
+  <mat-menu #issueMenu="matMenu">
+    @for (demo of issueDemos; track demo.issue) {
+    <button (click)="onIssueDemoClick(demo.issue)" mat-menu-item>
+      {{ demo.label }}
+    </button>
+    }
+  </mat-menu>
+
   <a href="https://github.com/ChristofFritz/ngx-drag-drop" mat-icon-button>
     <mat-icon svgIcon="github"></mat-icon>
   </a>

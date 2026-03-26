@@ -219,7 +219,7 @@ export class DndDropzoneDirective implements AfterViewInit, OnDestroy {
       // signal custom drop handling
       event.preventDefault();
 
-      const dropEffect = getDropEffect(event);
+      const dropEffect = getDropEffect(event, this.dndEffectAllowed);
 
       setDropEffect(event, dropEffect);
 
