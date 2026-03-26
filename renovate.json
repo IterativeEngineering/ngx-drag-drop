@@ -2,57 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
-    "schedule:biweekly",
-    "group:allNonMajor",
-    ":prHourlyLimitNone",
-    "helpers:disableTypesNodeMajor"
+    "schedule:biweekly"
   ],
   "labels": ["dependencies"],
   "lockFileMaintenance": {
     "enabled": true
   },
   "rangeStrategy": "pin",
-  "packageRules": [
-    {
-      "groupName": "angular",
-      "matchPackageNames": [
-        "@angular/**",
-        "@angular-devkit/**",
-        "ng-packagr",
-        "zone.js"
-      ]
-    },
-    {
-      "groupName": "angular material",
-      "matchPackageNames": [
-        "@angular/cdk",
-        "@angular/material"
-      ]
-    },
-    {
-      "groupName": "vitest",
-      "matchPackageNames": ["@vitest/**", "vitest"]
-    },
-    {
-      "groupName": "github-actions",
-      "matchManagers": ["github-actions"]
-    },
-    {
-      "groupName": "devDependencies",
-      "matchDepTypes": ["devDependencies"],
-      "rangeStrategy": "pin"
-    },
-    {
-      "groupName": "dependencies",
-      "matchDepTypes": ["dependencies"],
-      "rangeStrategy": "replace"
-    },
-    {
-      "groupName": "peerDependencies",
-      "matchDepTypes": ["peerDependencies"],
-      "rangeStrategy": "widen"
-    }
-  ],
   "vulnerabilityAlerts": {
     "labels": ["security"],
     "assignees": ["ChristofFritz"]
