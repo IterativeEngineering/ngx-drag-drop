@@ -2,27 +2,28 @@
   <div class="row gap-3 gap-sm-0">
     <div class="d-flex flex-column col gap-2">
       @for (draggable of draggables; track draggable) {
-      <mat-card
-        appearance="raised"
-        [dndDisableIf]="draggable.disable"
-        [dndDraggable]="draggable.content"
-        [dndEffectAllowed]="draggable.effectAllowed"
-        (dndCanceled)="onDragged($event, 'none')"
-        (dndCopied)="onDragged($event, 'copy')"
-        (dndEnd)="onDragEnd($event)"
-        (dndLinked)="onDragged($event, 'link')"
-        (dndMoved)="onDragged($event, 'move')"
-        (dndStart)="onDragStart($event)">
-        <mat-card-content class="d-flex flex-column gap-2">
-          @if (draggable.handle) {
-          <div class="drag-handle" dndHandle>
-            <mat-icon fontIcon="drag_handle" mat-list-icon> </mat-icon>
-          </div>
-          } draggable ({{ draggable.effectAllowed }})
-          <span [hidden]="!draggable.handle"> only with handle</span>
-          <span [hidden]="!draggable.disable"> DISABLED</span>
-        </mat-card-content>
-      </mat-card>
+        <mat-card
+          appearance="raised"
+          [dndDisableIf]="draggable.disable"
+          [dndDraggable]="draggable.content"
+          [dndEffectAllowed]="draggable.effectAllowed"
+          (dndCanceled)="onDragged($event, 'none')"
+          (dndCopied)="onDragged($event, 'copy')"
+          (dndEnd)="onDragEnd($event)"
+          (dndLinked)="onDragged($event, 'link')"
+          (dndMoved)="onDragged($event, 'move')"
+          (dndStart)="onDragStart($event)">
+          <mat-card-content class="d-flex flex-column gap-2">
+            @if (draggable.handle) {
+              <div class="drag-handle" dndHandle>
+                <mat-icon fontIcon="drag_handle" mat-list-icon> </mat-icon>
+              </div>
+            }
+            draggable ({{ draggable.effectAllowed }})
+            <span [hidden]="!draggable.handle"> only with handle</span>
+            <span [hidden]="!draggable.disable"> DISABLED</span>
+          </mat-card-content>
+        </mat-card>
       }
 
       <mat-card
@@ -38,11 +39,12 @@
         (dndStart)="onDragStart($event)">
         <mat-card-content class="d-flex flex-column gap-2">
           @if (draggableWithDragImage.handle) {
-          <div class="drag-handle">
-            <mat-icon dndHandle fontIcon="drag_handle" mat-list-icon>
-            </mat-icon>
-          </div>
-          } draggable ({{ draggableWithDragImage.effectAllowed }})
+            <div class="drag-handle">
+              <mat-icon dndHandle fontIcon="drag_handle" mat-list-icon>
+              </mat-icon>
+            </div>
+          }
+          draggable ({{ draggableWithDragImage.effectAllowed }})
           <span [hidden]="!draggableWithDragImage.handle"
             >only with handle</span
           >
@@ -114,7 +116,7 @@
             dndDragoverClass="custom-drag-over"
             dndDropzone>
             @if (lastDropEvent) {
-            <pre>{{ lastDropEvent | json }}</pre>
+              <pre>{{ lastDropEvent | json }}</pre>
             }
           </section>
         </mat-card-content>

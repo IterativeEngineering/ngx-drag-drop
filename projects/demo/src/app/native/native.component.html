@@ -51,13 +51,16 @@
             dndDropzone>
             <div>
               @if (lastDropEvent) {
-              <pre>Event: {{ lastDropEvent | json }}</pre>
-              } @if (lastDropTypes && lastDropTypes.length) {
-              <pre>Types: {{ lastDropTypes | json }}</pre>
-              } @if (lastDropFiles && lastDropFiles.length) {
-              <pre>Files: {{ lastDropFiles | json }}</pre>
-              } @if (lastDropItems && lastDropItems.length) {
-              <pre>Items: {{ lastDropItems | json }}</pre>
+                <pre>Event: {{ lastDropEvent | json }}</pre>
+              }
+              @if (lastDropTypes && lastDropTypes.length) {
+                <pre>Types: {{ lastDropTypes | json }}</pre>
+              }
+              @if (lastDropFiles && lastDropFiles.length) {
+                <pre>Files: {{ lastDropFiles | json }}</pre>
+              }
+              @if (lastDropItems && lastDropItems.length) {
+                <pre>Items: {{ lastDropItems | json }}</pre>
               }
             </div>
           </div>

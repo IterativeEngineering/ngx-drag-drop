@@ -29,26 +29,28 @@
 </div>
 
 @if (lastDropEvent) {
-<div class="result">
-  <div>
-    <strong
-      >Dropzone received dropEffect: {{ lastDropEvent.dropEffect }}</strong
-    >
-    <span
-      [class.pass]="lastDropEvent.dropEffect === 'link'"
-      [class.fail]="lastDropEvent.dropEffect !== 'link'">
-      {{
-        lastDropEvent.dropEffect === 'link' ? 'PASS' : 'FAIL — expected "link"'
-      }}
-    </span>
+  <div class="result">
+    <div>
+      <strong
+        >Dropzone received dropEffect: {{ lastDropEvent.dropEffect }}</strong
+      >
+      <span
+        [class.pass]="lastDropEvent.dropEffect === 'link'"
+        [class.fail]="lastDropEvent.dropEffect !== 'link'">
+        {{
+          lastDropEvent.dropEffect === 'link'
+            ? 'PASS'
+            : 'FAIL — expected "link"'
+        }}
+      </span>
+    </div>
+    <div>
+      <strong>Draggable fired effect: {{ dragEffect }}</strong>
+      <span
+        [class.pass]="dragEffect === 'link'"
+        [class.fail]="dragEffect !== 'link'">
+        {{ dragEffect === 'link' ? 'PASS' : 'FAIL — expected "link"' }}
+      </span>
+    </div>
   </div>
-  <div>
-    <strong>Draggable fired effect: {{ dragEffect }}</strong>
-    <span
-      [class.pass]="dragEffect === 'link'"
-      [class.fail]="dragEffect !== 'link'">
-      {{ dragEffect === 'link' ? 'PASS' : 'FAIL — expected "link"' }}
-    </span>
-  </div>
-</div>
 }

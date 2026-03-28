@@ -9,9 +9,9 @@
   </button>
   <mat-menu #issueMenu="matMenu">
     @for (demo of issueDemos; track demo.issue) {
-    <button (click)="onIssueDemoClick(demo.issue)" mat-menu-item>
-      {{ demo.label }}
-    </button>
+      <button (click)="onIssueDemoClick(demo.issue)" mat-menu-item>
+        {{ demo.label }}
+      </button>
     }
   </mat-menu>
 
@@ -21,13 +21,16 @@
 </mat-toolbar>
 
 @if (activeTab$ | async; as activeTab) {
-<nav [tabPanel]="tabPanel" mat-tab-nav-bar>
-  @for (tab of tabs; track tab) {
-  <a [active]="activeTab === tab" (click)="onTabLinkClick(tab)" mat-tab-link>
-    {{ tab }}
-  </a>
-  }
-</nav>
+  <nav [tabPanel]="tabPanel" mat-tab-nav-bar>
+    @for (tab of tabs; track tab) {
+      <a
+        [active]="activeTab === tab"
+        (click)="onTabLinkClick(tab)"
+        mat-tab-link>
+        {{ tab }}
+      </a>
+    }
+  </nav>
 }
 
 <mat-tab-nav-panel #tabPanel class="flex-grow-1 pt-3 overflow-auto">
