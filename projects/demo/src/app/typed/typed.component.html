@@ -12,14 +12,14 @@
           dndPlaceholderRef>
         </mat-list-item>
         @for (fruit of fruits; track trackByFruit(i, fruit); let i = $index) {
-        <mat-list-item
-          [dndDraggable]="fruit"
-          [dndType]="fruit.type"
-          (dndMoved)="onDragged(i, fruit, fruits)"
-          class="border rounded-1 bg-white"
-          dndEffectAllowed="move">
-          <span matListItemTitle>{{ fruit.type }} {{ fruit.id }}</span>
-        </mat-list-item>
+          <mat-list-item
+            [dndDraggable]="fruit"
+            [dndType]="fruit.type"
+            (dndMoved)="onDragged(i, fruit, fruits)"
+            class="border rounded-1 bg-white"
+            dndEffectAllowed="move">
+            <span matListItemTitle>{{ fruit.type }} {{ fruit.id }}</span>
+          </mat-list-item>
         }
       </mat-list>
     </div>
@@ -36,14 +36,14 @@
           dndPlaceholderRef>
         </mat-list-item>
         @for (apple of apples; track trackByFruit(i, apple); let i = $index) {
-        <mat-list-item
-          [dndDraggable]="apple"
-          [dndType]="apple.type"
-          (dndMoved)="onDragged(i, apple, apples)"
-          class="border rounded-1 bg-white"
-          dndEffectAllowed="move">
-          <span matListItemTitle>{{ apple.type }} {{ apple.id }}</span>
-        </mat-list-item>
+          <mat-list-item
+            [dndDraggable]="apple"
+            [dndType]="apple.type"
+            (dndMoved)="onDragged(i, apple, apples)"
+            class="border rounded-1 bg-white"
+            dndEffectAllowed="move">
+            <span matListItemTitle>{{ apple.type }} {{ apple.id }}</span>
+          </mat-list-item>
         }
       </mat-list>
     </div>
@@ -59,16 +59,19 @@
           class="dndPlaceholder border rounded-1 bg-warning bg-gradient"
           dndPlaceholderRef>
         </mat-list-item>
-        @for (banana of bananas; track trackByFruit(i, banana); let i = $index)
-        {
-        <mat-list-item
-          [dndDraggable]="banana"
-          [dndType]="banana.type"
-          (dndMoved)="onDragged(i, banana, bananas)"
-          class="border rounded-1 bg-white"
-          dndEffectAllowed="move">
-          <span matListItemTitle>{{ banana.type }} {{ banana.id }}</span>
-        </mat-list-item>
+        @for (
+          banana of bananas;
+          track trackByFruit(i, banana);
+          let i = $index
+        ) {
+          <mat-list-item
+            [dndDraggable]="banana"
+            [dndType]="banana.type"
+            (dndMoved)="onDragged(i, banana, bananas)"
+            class="border rounded-1 bg-white"
+            dndEffectAllowed="move">
+            <span matListItemTitle>{{ banana.type }} {{ banana.id }}</span>
+          </mat-list-item>
         }
       </mat-list>
     </div>

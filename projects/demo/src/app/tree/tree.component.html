@@ -5,29 +5,29 @@
       dndPlaceholderRef />
 
     @for (item of list; track item) {
-    <div class="">
-      <mat-list-item
-        [dndDraggable]="item"
-        dndEffectAllowed="move"
-        (dndMoved)="onDragged(item, list, 'move')"
-        class="border bg-white ms-n3">
-        <span matListItemTitle>{{ item.content }}</span>
-      </mat-list-item>
-      @if (item.children) {
-      <mat-list
-        (dndDrop)="onDrop($event, item.children)"
-        class="d-flex flex-column bg-light pt-2 pb-0 ps-2"
-        style="min-height: unset"
-        dndDropzone
-        dndEffectAllowed="move">
-        <ng-container
-          *ngTemplateOutlet="
-            recursiveList;
-            context: { $implicit: item.children }
-          " />
-      </mat-list>
-      }
-    </div>
+      <div class="">
+        <mat-list-item
+          [dndDraggable]="item"
+          dndEffectAllowed="move"
+          (dndMoved)="onDragged(item, list, 'move')"
+          class="border bg-white ms-n3">
+          <span matListItemTitle>{{ item.content }}</span>
+        </mat-list-item>
+        @if (item.children) {
+          <mat-list
+            (dndDrop)="onDrop($event, item.children)"
+            class="d-flex flex-column bg-light pt-2 pb-0 ps-2"
+            style="min-height: unset"
+            dndDropzone
+            dndEffectAllowed="move">
+            <ng-container
+              *ngTemplateOutlet="
+                recursiveList;
+                context: { $implicit: item.children }
+              " />
+          </mat-list>
+        }
+      </div>
     }
   </ng-template>
 
