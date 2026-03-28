@@ -142,7 +142,11 @@ export class DndDropzoneDirective implements AfterViewInit, OnDestroy {
 
     // check if another dropzone is activated
     if (event._dndDropzoneActive === true) {
-      this.cleanupDragoverState();
+      this.removePlaceholderFromDOM();
+      this.renderer.removeClass(
+        this.elementRef.nativeElement,
+        this.dndDragoverClass
+      );
       return;
     }
 
@@ -252,17 +256,11 @@ export class DndDropzoneDirective implements AfterViewInit, OnDestroy {
   }
 
   onDragLeave(event: DndEvent) {
-    event.preventDefault();
-    event.stopPropagation();
-
     this.enterCount--;
 
-    // check if still inside this dropzone and not yet handled by another dropzone
-    if (event._dndDropzoneActive == null) {
-      if (this.enterCount !== 0) {
-        event._dndDropzoneActive = true;
-        return;
-      }
+    // only clean up when all enter/leave pairs are balanced (cursor has truly left)
+    if (this.enterCount > 0) {
+      return;
     }
 
     this.cleanupDragoverState();
