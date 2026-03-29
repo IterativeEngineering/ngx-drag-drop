@@ -311,31 +311,20 @@ export declare class DndDropzoneDirective {
 }
 ```
 
-## Touch support
+## Touch support (experimental)
 
-Install the `mobile-drag-drop` module available on npm.
+This library uses the native HTML5 Drag and Drop API, which is **not supported on most mobile browsers** (including iOS Safari). Touch support requires a polyfill that translates touch events into drag events. This approach has known limitations and the experience may not be reliable on all devices.
 
-Add the following lines to your js code
+To enable basic touch support, install the `@dragdroptouch/drag-drop-touch` polyfill:
 
 ```JS
-import { polyfill } from 'mobile-drag-drop';
-// optional import of scroll behaviour
-import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scroll-behaviour";
+import { enableDragDropTouch } from "@dragdroptouch/drag-drop-touch";
 
-polyfill( {
-  // use this to make use of the scroll behaviour
-  dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride
-} );
-
-// workaround to make scroll prevent work in iOS Safari >= 10
-try {
-  window.addEventListener( "touchmove", function() { }, { passive: false } );
-}
-catch(e){}
+enableDragDropTouch();
 ```
 
 For more info on the polyfill check it out on GitHub
-https://github.com/timruffles/mobile-drag-drop
+https://github.com/drag-drop-touch-js/dragdroptouch
 
 ## Known issues
 
