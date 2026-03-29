@@ -79,8 +79,8 @@ importers:
         specifier: 21.2.1
         version: 21.2.1(@angular/compiler-cli@21.2.6(@angular/compiler@21.2.6)(typescript@6.0.2))(tslib@2.8.1)(typescript@6.0.2)
       prettier:
-        specifier: 3.5.3
-        version: 3.5.3
+        specifier: 3.8.1
+        version: 3.8.1
       typescript:
         specifier: 6.0.2
         version: 6.0.2
@@ -2510,8 +2510,8 @@ packages:
     resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -5412,7 +5412,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier@3.5.3: {}
+  prettier@3.8.1: {}
 
   proc-log@6.1.0: {}
 
