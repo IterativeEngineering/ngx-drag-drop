@@ -39,7 +39,7 @@
     "@analogjs/vite-plugin-angular": "2.5.3",
     "@angular/build": "21.2.14",
     "@angular/cli": "21.2.14",
-    "@angular/compiler-cli": "21.2.14",
+    "@angular/compiler-cli": "21.2.16",
     "@types/node": "24.12.4",
     "@vitest/coverage-v8": "4.1.7",
     "jsdom": "29.1.1",
