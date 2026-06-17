@@ -37,6 +37,7 @@ Starting with v13, the library major version matches the Angular major version.
 
 | Angular | ngx-drag-drop |
 | ------- | ------------- |
+| 22.x    | 22.x          |
 | 21.x    | 21.x          |
 | 20.x    | 20.x          |
 | 19.x    | 19.x          |
