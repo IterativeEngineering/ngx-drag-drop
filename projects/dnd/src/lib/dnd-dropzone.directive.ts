@@ -5,6 +5,7 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
+  inject,
   Input,
   NgZone,
   OnDestroy,
@@ -38,7 +39,7 @@ export interface DndDropEvent {
 
 @Directive({ selector: '[dndPlaceholderRef]', standalone: true })
 export class DndPlaceholderRefDirective implements OnInit {
-  constructor(public readonly elementRef: ElementRef<HTMLElement>) {}
+  readonly elementRef: ElementRef<HTMLElement> = inject(ElementRef);
 
   ngOnInit() {
     // placeholder has to be "invisible" to the cursor, or it would interfere with the dragover detection for the same dropzone
@@ -75,11 +76,9 @@ export class DndDropzoneDirective implements AfterViewInit, OnDestroy {
 
   private enterCount: number = 0;
 
-  constructor(
-    private ngZone: NgZone,
-    private elementRef: ElementRef,
-    private renderer: Renderer2
-  ) {}
+  private ngZone = inject(NgZone);
+  private elementRef: ElementRef = inject(ElementRef);
+  private renderer = inject(Renderer2);
 
   @Input() set dndDisableIf(value: boolean) {
     this.disabled = value;
