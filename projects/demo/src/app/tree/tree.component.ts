@@ -6,7 +6,6 @@ import {
   DndDraggableDirective,
   DndDropEvent,
   DndDropzoneDirective,
-  DndHandleDirective,
   DndPlaceholderRefDirective,
   DropEffect,
 } from 'ngx-drag-drop';
@@ -17,18 +16,18 @@ interface DraggableItem {
 }
 
 @Component({
-    selector: 'dnd-tree',
-    imports: [
-        CommonModule,
-        DndDropzoneDirective,
-        DndHandleDirective,
-        DndPlaceholderRefDirective,
-        MatIconModule,
-        MatListModule,
-        DndDraggableDirective,
-    ],
-    templateUrl: './tree.component.html',
-    styleUrls: ['./tree.component.scss']
+  selector: 'dnd-tree',
+  standalone: true,
+  imports: [
+    CommonModule,
+    DndDropzoneDirective,
+    DndPlaceholderRefDirective,
+    MatIconModule,
+    MatListModule,
+    DndDraggableDirective,
+  ],
+  templateUrl: './tree.component.html',
+  styleUrls: ['./tree.component.scss'],
 })
 export default class TreeComponent {
   draggableList: DraggableItem[] = [
