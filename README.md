@@ -1,3 +1,12 @@
+Syncing fork with the original repo:
+
+1. Add remote:
+`git remote add reppners https://github.com/reppners/ngx-drag-drop`
+2. `git fetch reppners`
+3. Find the version to merge on https://github.com/reppners/ngx-drag-drop/releases
+4. `git merge [tag] --allow-unrelated-histories`
+5. Resolve conflicts by accepting incoming changes, except for our custom behavior
+
 [![npm](https://img.shields.io/npm/v/ngx-drag-drop.svg)](https://www.npmjs.com/package/ngx-drag-drop)
 [![npm (next)](https://img.shields.io/npm/v/ngx-drag-drop/next.svg)](https://www.npmjs.com/package/ngx-drag-drop)
 [![NpmLicense](https://img.shields.io/npm/l/ngx-drag-drop.svg)](https://www.npmjs.com/package/ngx-drag-drop)

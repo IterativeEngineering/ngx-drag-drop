@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Test on release
 
 on:
   release:
@@ -24,20 +24,4 @@ jobs:
           pnpm run test:coverage 2>&1 | tee /dev/stderr | sed -n '/^-.*|/,/^-.*|$/p' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
 
-  publish:
-    needs: test
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
-      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
-        with:
-          node-version: 24
-          cache: pnpm
-          registry-url: https://registry.npmjs.org/
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run build:lib
-      - run: pnpm publish ./dist/ngx-drag-drop --provenance --access public --no-git-checks
+  # The fork is consumed as a GitHub release tarball, not as an npmjs package.

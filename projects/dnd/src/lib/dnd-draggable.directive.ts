@@ -46,6 +46,8 @@ export class DndDraggableDirective implements AfterViewInit, OnDestroy {
   @Input() dndDragImageOffsetFunction: DndDragImageOffsetFunction =
     calculateDragImageOffset;
 
+  @Input() customDragImageRef?: ElementRef;
+
   @Output() readonly dndStart: EventEmitter<DragEvent> =
     new EventEmitter<DragEvent>();
   @Output() readonly dndDrag: EventEmitter<DragEvent> =
@@ -98,6 +100,9 @@ export class DndDraggableDirective implements AfterViewInit, OnDestroy {
         'drag',
         this.dragEventHandler
       );
+      if (this.customDragImageRef) {
+        this.registerDragImage(this.customDragImageRef);
+      }
     });
   }
 
