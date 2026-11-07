@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <mat-card appearance="raised">
+        <mat-card-header>
+          <mat-card-title>Draggable stuff</mat-card-title>
+          <mat-card-subtitle>
+            Drag the image or a text selection onto the dropzone and see what
+            happens
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="d-flex flex-column gap-3">
+          <div>
+            <img src="https://i.imgflip.com/1quv8v.jpg" />
+          </div>
+
+          <div>
+            <a href="https://imgflip.com/i/1quv8v">Made with imgflip</a>
+          </div>
+
+          <a href="#">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.
+          </a>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col">
+      <mat-card appearance="raised">
+        <mat-card-header>
+          <mat-card-title>Dropzone</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div
+            [dndAllowExternal]="true"
+            (dndDrop)="onDrop($event)"
+            class="mt-2 p-2 border rounded"
+            dndDropzone>
+            <div>
+              @if (lastDropEvent) {
+                <pre>Event: {{ lastDropEvent | json }}</pre>
+              }
+              @if (lastDropTypes && lastDropTypes.length) {
+                <pre>Types: {{ lastDropTypes | json }}</pre>
+              }
+              @if (lastDropFiles && lastDropFiles.length) {
+                <pre>Files: {{ lastDropFiles | json }}</pre>
+              }
+              @if (lastDropItems && lastDropItems.length) {
+                <pre>Items: {{ lastDropItems | json }}</pre>
+              }
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
