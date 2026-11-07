@@ -6,5 +6,8 @@ export * from './lib/dnd-draggable.directive';
 export * from './lib/dnd-dropzone.directive';
 export * from './lib/dnd-handle.directive';
 export * from './lib/dnd-types';
-export { DndDragImageOffsetFunction, calculateDragImageOffset } from './lib/dnd-utils';
+export {
+  DndDragImageOffsetFunction,
+  calculateDragImageOffset,
+} from './lib/dnd-utils';
 export * from './lib/dnd.module';

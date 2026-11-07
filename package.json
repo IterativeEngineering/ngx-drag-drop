@@ -6,6 +6,7 @@
     "build:lib": "ng build dnd",
     "watch:lib": "ng build dnd --watch --configuration development",
     "test": "ng test",
+    "lint": "prettier --check .",
     "publish:stable": "npm publish ./dist/ngx-drag-drop",
     "publish:next": "npm publish ./dist/ngx-drag-drop --tag next",
     "prettier": "npx prettier --write ."
