@@ -367,15 +367,6 @@ See https://angular.io/guide/creating-libraries
 - build library with `pnpm run build:lib`
 - publish library with `pnpm run publish:stable` (use `pnpm run publish:next` for pre-releases)
 
-#### Edit Docs
-
-- initially and on lib changes run `pnpm run build:lib` to current version of lib available to the demo
-- run `pnpm run start:docs`
-
-#### Release Docs
-
-The demo site is automatically deployed to GitHub Pages on every push to `master` via GitHub Actions.
-
 ---
 
 <p align="center">
